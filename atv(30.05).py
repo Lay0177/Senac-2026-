@@ -10,8 +10,20 @@ def home():
 def template():
     return render_template('login')
 
+@app.route('/alunos')
+def alunos():
+    lista_alunos = [
+        {'nome': 'Alice', 'matrícula': '12345678'},
+        {'nome': 'Bruno', 'matrícula': '98765432'},
+        {'nome': 'Clara', 'matrícula': '45678912'},
+        {'nome': 'Marcos', 'matrícula': '74125896'},
+        {'nome': 'Valéria', 'matrícula': '85236974'}
+    ]
+
+    return render_template('Alunos.html', alunos=lista_alunos)
+
 if __name__ == "__main__":
     app.run(debug=True)
 
-#HTML-login#
+
 
